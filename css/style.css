@@ -1,0 +1,45 @@
+/* Chart Container Styling - Mandatory Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf4ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d946ef;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #701a75;
+        }
+
+        .logo-solo {
+            margin: 0px -10px 0px 0px;
+            padding: 0;
+        }
+
+        .logo-text {
+            margin: 0px 0px 0px -10px;
+            padding: 0;
+        }
