@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Everbloom Sameth - Experiencia Interactiva</title>
+    <meta name="description" content="Ramos de rosas de listón satinado hechas a mano en Perú. El regalo eterno que nunca se marchita. Envíos a todo el país.">
+    <meta name="keywords" content="rosas eternas, flores de liston, regalo aniversario, Everbloom Sameth, rosas satinadas Lima">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Everbloom Sameth | Rosas que duran para siempre">
+    <meta property="og:description" content="Personaliza tu ramo de rosas satinadas. ¡El detalle perfecto que perdura tanto como tus sentimientos!">
+    <meta property="og:image" content="img/destacados/amor_eterno.png"> <meta property="og:url" content="https://tu-dominio.com">
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,6 +67,7 @@
 </head>
 <body class="bg-brand-light text-slate-800 font-sans antialiased selection:bg-brand-primary selection:text-white">
 
+
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-brand-primary/10">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -68,7 +76,7 @@
                 <img src="img/logo-text.png" width="180x180" alt="Everbloom Sameth" class="logo-text">
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="#analisis" class="hover:text-brand-primary transition-colors">Por qué Everbloom</a>
+                <a href="#analisis" class="hover:text-brand-primary transition-colors">¿Por qué Everbloom?</a>
                 <a href="#catalogo" class="hover:text-brand-primary transition-colors">Catálogo</a>
                 <a href="#cotizador" class="hover:text-brand-primary transition-colors">Cotizador</a>
             </div>
@@ -99,6 +107,7 @@
                     </button>
                 </div>
             </div>
+
             <!-- Decorative Visual (CSS only) -->
             <div class="relative hidden md:block h-96 w-full">
                 <div class="relative hidden md:block h-96 w-full">
@@ -156,6 +165,46 @@
             </div>
         </section>
 
+        <section id="testimonios" class="py-12 bg-white/50 border-y border-pink-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-serif font-bold text-brand-dark">Lo que dicen nuestros clientes</h2>
+                    <div class="flex justify-center text-brand-accent mt-2">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-50 italic text-slate-600 relative">
+                        <span class="absolute top-4 left-4 text-4xl text-brand-primary/20 font-serif">“</span>
+                        <p class="relative z-10 pt-4">"Pedí un ramo de 24 rosas para mi aniversario y mi novia quedó encantada. La calidad del listón es impresionante, ¡parecen reales!"</p>
+                        <div class="mt-4 flex items-center gap-3 not-italic">
+                            <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center font-bold text-brand-primary">C</div>
+                            <span class="text-sm font-bold text-slate-800">Carlos R. — Lima</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-50 italic text-slate-600 relative border-t-4 border-t-brand-primary">
+                        <span class="absolute top-4 left-4 text-4xl text-brand-primary/20 font-serif">“</span>
+                        <p class="relative z-10 pt-4">"Excelente atención por WhatsApp. Me ayudaron a elegir los colores para la graduación de mi hija. Las luces LED le dan el toque mágico."</p>
+                        <div class="mt-4 flex items-center gap-3 not-italic">
+                            <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center font-bold text-brand-primary">M</div>
+                            <span class="text-sm font-bold text-slate-800">María F. — Callao</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-50 italic text-slate-600 relative">
+                        <span class="absolute top-4 left-4 text-4xl text-brand-primary/20 font-serif">“</span>
+                        <p class="relative z-10 pt-4">"Buscaba algo que no se marchitara y Everbloom fue la mejor opción. El envío a provincia fue rápido y llegó en perfecto estado."</p>
+                        <div class="mt-4 flex items-center gap-3 not-italic">
+                            <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center font-bold text-brand-primary">A</div>
+                            <span class="text-sm font-bold text-slate-800">Andrea L. — Arequipa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 2: INTERACTIVE CATALOG -->
         <section id="catalogo" class="scroll-mt-24">
             <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-200 pb-4">
@@ -163,8 +212,14 @@
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-2">Nuestro Catálogo</h2>
                     <p class="text-slate-600">Explora nuestros diseños más populares. Cada pieza es única.</p>
                 </div>
+
                 <!-- Filters -->
                 <div class="flex space-x-2 mt-4 md:mt-0">
+                <div class="max-w-md mx-auto mb-0">
+                    <input type="text" id="product-search" 
+                           placeholder="Buscar rosas, ramos o detalles..." 
+                           class="w-full px-5 py-3 rounded-2xl border border-pink-200 focus:ring-2 focus:ring-brand-primary outline-none shadow-sm transition-all">
+                </div>
                     <button class="filter-btn active bg-brand-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="all">Todos</button>
                     <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-brand-primary hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="ramo">Ramos</button>
                     <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-brand-primary hover:text-brand-primary px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="individual">Individuales</button>
@@ -175,6 +230,8 @@
                 <!-- Products will be injected by JS -->
             </div>
         </section>
+
+
 
         <!-- SECTION 3: CUSTOMIZATION ENGINE (The "App" Core) -->
         <section id="cotizador" class="scroll-mt-24 bg-white rounded-3xl shadow-xl overflow-hidden border border-brand-primary/20">
@@ -221,16 +278,31 @@
                         </div>
 
                         <!-- Step 2: Color -->
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">2. Color Principal</label>
-                            <select id="color-select" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition">
-                                <option value="Morado Real">Morado Real (Tendencia)</option>
-                                <option value="Rojo Pasión">Rojo Pasión</option>
-                                <option value="Rosa Pastel">Rosa Pastel</option>
-                                <option value="Azul Eléctrico">Azul Eléctrico</option>
-                                <option value="Negro Elegante">Negro Elegante</option>
-                                <option value="Combinado">Combinado (Especifique al final)</option>
-                            </select>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-slate-700 mb-3">Color:</label>
+                            <div class="flex flex-wrap gap-3" id="color-swatches">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="color-option" value="Rojo Pasión" class="sr-only peer" checked>
+                                    <div class="w-10 h-10 rounded-full bg-red-600 border-2 border-transparent peer-checked:border-brand-primary peer-checked:scale-110 shadow-sm transition-all" title="Rojo Pasión"></div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="color-option" value="Rosado Pastel" class="sr-only peer">
+                                    <div class="w-10 h-10 rounded-full bg-pink-400 border-2 border-transparent peer-checked:border-brand-primary peer-checked:scale-110 shadow-sm transition-all" title="Rosado Pastel"></div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="color-option" value="Morado Místico" class="sr-only peer">
+                                    <div class="w-10 h-10 rounded-full bg-purple-700 border-2 border-transparent peer-checked:border-brand-primary peer-checked:scale-110 shadow-sm transition-all" title="Morado Místico"></div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="color-option" value="Azul Real" class="sr-only peer">
+                                    <div class="w-10 h-10 rounded-full bg-blue-700 border-2 border-transparent peer-checked:border-brand-primary peer-checked:scale-110 shadow-sm transition-all" title="Azul Real"></div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="color-option" value="Dorado Galante" class="sr-only peer">
+                                    <div class="w-10 h-10 rounded-full bg-amber-400 border-2 border-transparent peer-checked:border-brand-primary peer-checked:scale-110 shadow-sm transition-all" title="Dorado"></div>
+                                </label>
+                            </div>
+                            <input type="hidden" id="color-select" value="Rojo Pasión">
                         </div>
 
                         <!-- Step 3: Extras -->
@@ -311,7 +383,7 @@
             <center>
                 <img src="img/logo-text.png" width="180x180" alt="Everbloom Sameth" class="logo-text">
             </center>
-            <p class="mb-8 max-w-md mx-auto">Creando momentos inolvidables con la belleza del satín. Envíos a todo Ciudad de México.</p>
+            <p class="max-w-md mx-auto">Creando momentos inolvidables con la belleza del satín.</p> </br> <p class="mb-8 max-w-md mx-auto" style="font-weight: bold; text-shadow: 1px 1px 5px rgba(0,0,0, .8);">Envíos a todo el Perú.</p>
             <div class="flex justify-center space-x-6 text-sm">
                 <a href="#" class="hover:text-brand-primary transition">Instagram</a>
                 <a href="#" class="hover:text-brand-primary transition">TikTok</a>
@@ -398,7 +470,16 @@
         const form = document.getElementById('customizer-form');
         const sizeInputs = document.querySelectorAll('input[name="size"]');
         const colorInput = document.getElementById('color-select');
+        const colorRadios = document.querySelectorAll('input[name="color-option"]');
         const extraInputs = document.querySelectorAll('input[name="extras"]');
+
+        // Escuchar cuando cambian los circulitos de color
+        colorRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                colorInput.value = e.target.value; // Actualizamos el valor oculto
+                updateCalculator(); // Refrescamos el resumen
+            });
+        });
         
         // Output Elements
         const outSize = document.getElementById('summary-size');
@@ -411,6 +492,15 @@
     <script src="js/carousel.js"></script>
     <script src="js/catalog.js"></script>
     <script src="js/calculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+    <a href="https://wa.me/51951774812" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-[100] bg-[#25d366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+       title="¿Tienes dudas? Escríbenos">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48 2.242 2.242 3.48 5.227 3.48 8.403 0 6.557-5.332 11.888-11.888 11.888-2.007 0-3.974-.506-5.717-1.464L0 24zm6.204-3.792l.445.264c1.604.953 3.46 1.456 5.383 1.456 5.679 0 10.301-4.622 10.301-10.301 0-2.751-1.072-5.337-3.018-7.283-1.946-1.947-4.532-3.018-7.283-3.018-5.679 0-10.301 4.622-10.301 10.301 0 2.02.534 3.993 1.545 5.727l.29.5-.964 3.523 3.602-.945z"/>
+        </svg>
+    </a>
 </body>
 </html>
