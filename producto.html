@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Personalizar Producto - Everbloom Sameth</title>
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Lato', sans-serif; }
+        .bg-brand-light { background-color: #fdf4ff; }
+        .text-brand-dark { color: #701a75; }
+        .bg-brand-primary { background-color: #d946ef; }
+        
+        .option-card input:checked + div {
+            border-color: #d946ef;
+            background-color: #fdf4ff;
+        }
+    </style>
+</head>
+<body class="bg-brand-light font-sans text-slate-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-pink-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center text-brand-dark font-bold hover:text-brand-primary transition">
+                <span class="mr-2">←</span> Volver al Catálogo
+            </a>
+            <div class="font-serif text-xl font-bold text-brand-dark">
+                <img src="img/logo-text.png" width="150x150" alt="Everbloom Sameth" class="logo-text">
+            </div>
+            <div class="hidden md:block text-xs uppercase tracking-widest font-bold text-slate-400">Detalle de Producto</div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- GALERÍA -->
+            <div class="lg:col-span-5 space-y-6">
+                <div id="main-image-container" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden aspect-square border border-pink-50 p-6 flex items-center justify-center">
+                    <img id="current-img" src="" class="max-w-full max-h-full object-contain transition-all duration-500" alt="Producto Principal">
+                </div>
+                
+                <div id="thumbnails" class="flex gap-4 overflow-x-auto pb-4 snap-x">
+                    <!-- Inyectado por JS -->
+                </div>
+
+                <div class="hidden lg:block bg-white/50 p-6 rounded-3xl border border-pink-100 mt-10">
+                    <h3 class="font-bold text-brand-dark mb-4 uppercase text-xs tracking-widest">Garantía Everbloom</h3>
+                    <ul class="text-sm space-y-3 text-slate-500">
+                        <li class="flex items-center gap-2">✅ Rosas que nunca se marchitan.</li>
+                        <li class="flex items-center gap-2">✅ Listón satinado de primera calidad.</li>
+                        <li class="flex items-center gap-2">✅ Empaque listo para regalo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONFIGURADOR -->
+            <div class="lg:col-span-7 bg-white rounded-[2.5rem] shadow-sm p-8 md:p-12 border border-pink-50">
+                <div class="mb-8">
+                    <span id="p-category" class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Ramo Premium</span>
+                    <h1 id="p-name" class="text-4xl md:text-5xl font-serif font-bold text-brand-dark mt-2">Cargando...</h1>
+                    <p id="p-desc" class="text-slate-500 mt-4 text-lg"></p>
+                </div>
+
+                <form id="product-form" class="space-y-10">
+                    <!-- Selección de Tamaño -->
+                    <div>
+                        <label class="block font-bold text-brand-dark mb-4 flex justify-between items-center">
+                            1. Selecciona el tamaño
+                            <span class="text-xs font-normal text-slate-400">Obligatorio</span>
+                        </label>
+                        <div class="grid grid-cols-3 gap-4">
+                            <label class="option-card cursor-pointer">
+                                <input type="radio" name="size" value="12" data-price="25" class="hidden" checked>
+                                <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
+                                    <span class="block font-bold text-lg">12</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
+                                </div>
+                            </label>
+                            <label class="option-card cursor-pointer">
+                                <input type="radio" name="size" value="24" data-price="45" class="hidden">
+                                <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
+                                    <span class="block font-bold text-lg">24</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
+                                </div>
+                            </label>
+                            <label class="option-card cursor-pointer">
+                                <input type="radio" name="size" value="50" data-price="90" class="hidden">
+                                <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
+                                    <span class="block font-bold text-lg">50</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Selección de Color -->
+                    <div>
+                        <label class="block font-bold text-brand-dark mb-4">2. Color de las Rosas</label>
+                        <select id="p-color" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-brand-primary outline-none transition">
+                            <option value="Rojo Clásico">Rojo Clásico</option>
+                            <option value="Rosa Pastel">Rosa Pastel</option>
+                            <option value="Azul Real">Azul Real</option>
+                            <option value="Blanco Nupcial">Blanco Nupcial</option>
+                            <option value="Personalizado">Color Personalizado (Consultar)</option>
+                        </select>
+                    </div>
+
+                    <!-- Extras -->
+                    <div>
+                        <label class="block font-bold text-brand-dark mb-4">3. Añade toques mágicos</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-4 border border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" name="extra" value="Luces LED" data-price="5" class="w-5 h-5 accent-brand-primary">
+                                    <span class="font-medium">Luces LED</span>
+                                </div>
+                                <span class="text-brand-primary font-bold">+$5.00</span>
+                            </label>
+                            <label class="flex items-center justify-between p-4 border border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" name="extra" value="Corona" data-price="3" class="w-5 h-5 accent-brand-primary">
+                                    <span class="font-medium">Corona Brillante</span>
+                                </div>
+                                <span class="text-brand-primary font-bold">+$3.00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL Y COMPRA -->
+                    <div class="pt-10 border-t border-pink-100">
+                        <div class="flex justify-between items-end mb-6">
+                            <div>
+                                <p class="text-slate-400 text-sm uppercase font-bold tracking-widest">Total Estimado</p>
+                                <p id="final-price" class="text-5xl font-light text-slate-900">$0.00</p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="enviarPedidoWA()" class="w-full bg-brand-primary hover:bg-brand-dark text-white py-6 rounded-2xl font-bold text-xl shadow-2xl shadow-pink-200 transition-all flex justify-center items-center gap-4">
+                            <span>Pedir por WhatsApp</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48 2.242 2.242 3.48 5.227 3.48 8.403 0 6.557-5.332 11.888-11.888 11.888-2.007 0-3.974-.506-5.717-1.464L0 24zm6.204-3.792l.445.264c1.604.953 3.46 1.456 5.383 1.456 5.679 0 10.301-4.622 10.301-10.301 0-2.751-1.072-5.337-3.018-7.283-1.946-1.947-4.532-3.018-7.283-3.018-5.679 0-10.301 4.622-10.301 10.301 0 2.02.534 3.993 1.545 5.727l.29.5-.964 3.523 3.602-.945z"/></svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-pink-100 mt-20 pt-16 pb-8 text-center md:text-left">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <img src="img/logo-text.png" width="180x180" alt="Everbloom Sameth" class="logo-text">
+                    <p class="text-slate-500 max-w-sm mx-auto md:mx-0">Momentos inolvidables a través del arte en listón.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold text-xs uppercase tracking-widest mb-6">Explorar</h6>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="index.html" class="hover:text-brand-primary">Inicio</a></li>
+                        <li><a href="index.html#catalogo" class="hover:text-brand-primary">Catálogo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-xs uppercase tracking-widest mb-6">Contacto</h6>
+                    <p class="text-sm text-slate-500">Ciudad de México, México<br>hola@everbloom.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cargar archivos JS externos -->
+    <script src="js/catalog.js"></script>
+    <script>
+        // Lógica de inicialización después de que catalog.js se cargue
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = parseInt(params.get('id'));
+            
+            // Verificación de seguridad si products existe
+            if (typeof products !== 'undefined') {
+                const product = products.find(p => p.id === productId);
+
+                if (product) {
+                    initProductPage(product);
+                } else {
+                    console.error("Producto no encontrado");
+                    // window.location.href = 'index.html';
+                }
+            } else {
+                console.error("La variable 'products' no está definida. Verifica que catalog.js se cargue correctamente.");
+            }
+        });
+
+        function initProductPage(product) {
+            document.getElementById('p-name').textContent = product.name;
+            document.getElementById('p-desc').textContent = product.desc;
+            
+            const thumbContainer = document.getElementById('thumbnails');
+            const mainImg = document.getElementById('current-img');
+
+            // Limpiar miniaturas existentes
+            thumbContainer.innerHTML = '';
+
+            for (let i = 1; i <= (product.imageCount || 1); i++) {
+                const imgUrl = `img/products/${product.folder}/${i}.png`;
+                if(i === 1) mainImg.src = imgUrl;
+
+                const btn = document.createElement('button');
+                btn.className = "flex-shrink-0 w-20 h-20 bg-white rounded-xl overflow-hidden border-2 border-transparent hover:border-brand-primary transition-all p-1 shadow-sm";
+                btn.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100?text=Flor'">`;
+                btn.onclick = () => {
+                    mainImg.style.opacity = '0';
+                    setTimeout(() => {
+                        mainImg.src = imgUrl;
+                        mainImg.style.opacity = '1';
+                    }, 150);
+                };
+                thumbContainer.appendChild(btn);
+            }
+
+            const form = document.getElementById('product-form');
+            const finalPriceEl = document.getElementById('final-price');
+
+            function calculate() {
+                const sizeInput = form.querySelector('input[name="size"]:checked');
+                let total = parseFloat(sizeInput.dataset.price);
+
+                const extras = form.querySelectorAll('input[name="extra"]:checked');
+                extras.forEach(ex => total += parseFloat(ex.dataset.price));
+
+                finalPriceEl.textContent = `$${total.toFixed(2)}`;
+            }
+
+            form.addEventListener('change', calculate);
+            calculate();
+
+            // Guardar el objeto producto globalmente para el envío de WA
+            window.currentProduct = product;
+        }
+
+        function enviarPedidoWA() {
+            if (!window.currentProduct) return;
+            const size = document.querySelector('input[name="size"]:checked').value;
+            const color = document.getElementById('p-color').value;
+            const extras = Array.from(document.querySelectorAll('input[name="extra"]:checked')).map(e => e.value).join(', ');
+            const total = document.getElementById('final-price').textContent;
+
+            const mensaje = `¡Hola Everbloom Sameth! 🌹\n\nMe interesa este producto: *${window.currentProduct.name}*\n\nDetalles:\n- Tamaño: ${size} Rosas\n- Color: ${color}\n- Extras: ${extras || 'Ninguno'}\n- Total: ${total}\n\n¿Tienen disponibilidad?`;
+            
+            window.open(`https://wa.me/5215512345678?text=${encodeURIComponent(mensaje)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

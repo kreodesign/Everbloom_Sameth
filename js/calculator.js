@@ -4,13 +4,14 @@ function updateCalculator() {
 
             // 1. Get Base Size Price
             const selectedSize = document.querySelector('input[name="size"]:checked');
-            const basePrice = parseFloat([25, 45, 90][Array.from(sizeInputs).indexOf(selectedSize)]); // Mapping values to prices if needed, or use logic below
+            const basePrice = parseFloat([20, 35, 55, 120][Array.from(sizeInputs).indexOf(selectedSize)]); // Mapping values to prices if needed, or use logic below
             
             // Logic based on value in HTML (simple mapping for this demo)
             let currentBasePrice = 0;
-            if(selectedSize.value === '12') currentBasePrice = 25;
-            if(selectedSize.value === '24') currentBasePrice = 45;
-            if(selectedSize.value === '50') currentBasePrice = 90;
+            if(selectedSize.value === '6') currentBasePrice = 20;
+            if(selectedSize.value === '12') currentBasePrice = 35;
+            if(selectedSize.value === '24') currentBasePrice = 55;
+            if(selectedSize.value === '50') currentBasePrice = 120;
 
             total += currentBasePrice;
 

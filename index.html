@@ -141,7 +141,7 @@
                 <!-- Chart 2: Color Trends -->
                 <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
                     <div class="mb-4">
-                        <h3 class="text-xl font-bold text-brand-dark">Tendencias de Color 2024</h3>
+                        <h3 class="text-xl font-bold text-brand-dark">Tendencias de Color 2026</h3>
                         <p class="text-sm text-slate-500">Preferencias de nuestros clientes para regalos</p>
                     </div>
                     <div class="chart-container">
@@ -190,24 +190,31 @@
                             <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">1. Tamaño del Ramo</label>
                             <div class="grid grid-cols-3 gap-3">
                                 <label class="cursor-pointer">
+                                    <input type="radio" name="size" value="6" class="peer sr-only" checked>
+                                    <div class="peer-checked:bg-brand-primary peer-checked:text-white peer-checked:border-brand-primary border border-slate-300 rounded-lg p-3 text-center transition hover:border-brand-primary">
+                                        <div class="font-bold">6 Rosas</div>
+                                        <div class="text-xs opacity-75">S/20.00</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
                                     <input type="radio" name="size" value="12" class="peer sr-only" checked>
                                     <div class="peer-checked:bg-brand-primary peer-checked:text-white peer-checked:border-brand-primary border border-slate-300 rounded-lg p-3 text-center transition hover:border-brand-primary">
                                         <div class="font-bold">12 Rosas</div>
-                                        <div class="text-xs opacity-75">$25.00</div>
+                                        <div class="text-xs opacity-75">S/35.00</div>
                                     </div>
                                 </label>
                                 <label class="cursor-pointer">
                                     <input type="radio" name="size" value="24" class="peer sr-only">
                                     <div class="peer-checked:bg-brand-primary peer-checked:text-white peer-checked:border-brand-primary border border-slate-300 rounded-lg p-3 text-center transition hover:border-brand-primary">
                                         <div class="font-bold">24 Rosas</div>
-                                        <div class="text-xs opacity-75">$45.00</div>
+                                        <div class="text-xs opacity-75">S/55.00</div>
                                     </div>
                                 </label>
                                 <label class="cursor-pointer">
                                     <input type="radio" name="size" value="50" class="peer sr-only">
                                     <div class="peer-checked:bg-brand-primary peer-checked:text-white peer-checked:border-brand-primary border border-slate-300 rounded-lg p-3 text-center transition hover:border-brand-primary">
                                         <div class="font-bold">50 Rosas</div>
-                                        <div class="text-xs opacity-75">$90.00</div>
+                                        <div class="text-xs opacity-75">S/120.00</div>
                                     </div>
                                 </label>
                             </div>
@@ -235,21 +242,21 @@
                                         <input type="checkbox" name="extras" value="mariposas" data-price="3" class="w-5 h-5 text-brand-primary rounded focus:ring-brand-primary">
                                         <span class="ml-3 text-slate-700">Mariposas Doradas (Set x3)</span>
                                     </div>
-                                    <span class="text-brand-primary font-bold">+$3.00</span>
+                                    <span class="text-brand-primary font-bold">+S/3.00</span>
                                 </label>
                                 <label class="flex items-center justify-between p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
                                     <div class="flex items-center">
                                         <input type="checkbox" name="extras" value="luces" data-price="5" class="w-5 h-5 text-brand-primary rounded focus:ring-brand-primary">
                                         <span class="ml-3 text-slate-700">Luces LED (Hadas)</span>
                                     </div>
-                                    <span class="text-brand-primary font-bold">+$5.00</span>
+                                    <span class="text-brand-primary font-bold">+S/5.00</span>
                                 </label>
                                 <label class="flex items-center justify-between p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
                                     <div class="flex items-center">
                                         <input type="checkbox" name="extras" value="corona" data-price="4" class="w-5 h-5 text-brand-primary rounded focus:ring-brand-primary">
                                         <span class="ml-3 text-slate-700">Mini Corona Brillante</span>
                                     </div>
-                                    <span class="text-brand-primary font-bold">+$4.00</span>
+                                    <span class="text-brand-primary font-bold">+S/4.00</span>
                                 </label>
                             </div>
                         </div>
@@ -267,7 +274,7 @@
                         <div class="space-y-4 text-white/90">
                             <div class="flex justify-between items-center">
                                 <span id="summary-size">Ramo de 12 Rosas</span>
-                                <span id="summary-size-price" class="font-mono">$25.00</span>
+                                <span id="summary-size-price" class="font-mono">S/35.00</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span>Color:</span>
@@ -283,7 +290,7 @@
                     <div class="relative z-10 mt-12">
                         <div class="flex justify-between items-end mb-6">
                             <span class="uppercase tracking-widest text-sm opacity-75">Total Estimado</span>
-                            <span id="total-price" class="text-5xl font-serif font-bold text-brand-accent">$25.00</span>
+                            <span id="total-price" class="text-5xl font-serif font-bold text-brand-accent">S/35.00</span>
                         </div>
 
                         <button id="whatsapp-btn" class="w-full bg-[#25d366] hover:bg-[#128c7e] text-white py-4 rounded-xl font-bold text-lg shadow-lg flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1">
@@ -301,62 +308,22 @@
 
     <footer class="bg-slate-900 text-slate-400 py-12 mt-12 border-t border-slate-800">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-serif text-white mb-4">Everbloom Sameth</h2>
+            <center>
+                <img src="img/logo-text.png" width="180x180" alt="Everbloom Sameth" class="logo-text">
+            </center>
             <p class="mb-8 max-w-md mx-auto">Creando momentos inolvidables con la belleza del satín. Envíos a todo Ciudad de México.</p>
             <div class="flex justify-center space-x-6 text-sm">
                 <a href="#" class="hover:text-brand-primary transition">Instagram</a>
                 <a href="#" class="hover:text-brand-primary transition">TikTok</a>
                 <a href="#" class="hover:text-brand-primary transition">Contacto</a>
             </div>
-            <p class="mt-8 text-xs text-slate-600">&copy; 2024 Everbloom Sameth. Todos los derechos reservados.</p>
+            <p class="mt-8 text-xs text-slate-600">&copy; 2026 Everbloom Sameth. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- DATA STORE ---
-        const products = [
-        { 
-            id: 1, 
-            name: 'Amor Eterno', 
-            type: 'ramo', 
-            price: 10.00, 
-            desc: '6 rosas satinadas con envoltura premium.', 
-            image: 'img/products/amor_eterno.png' // Asegúrate que el nombre coincida
-        },
-        { 
-            id: 2, 
-            name: 'Everbloom Eternity', 
-            type: 'ramo', 
-            price: 25.00, 
-            desc: '12 rosas satinadas con envoltura premium.', 
-            image: 'img/products/amor_eterno.png' // Asegúrate que el nombre coincida
-        },
-        { 
-            id: 3, 
-            name: 'Noche Mística', 
-            type: 'ramo', 
-            price: 45.00, 
-            desc: '24 rosas, incluye luces LED y tonos profundos.', 
-            image: 'img/products/amor_eterno.png' 
-        },
-        { 
-            id: 4, 
-            name: 'Domo de Cristal', 
-            type: 'individual', 
-            price: 12.00, 
-            desc: 'Una rosa eterna encapsulada tipo Bella y Bestia.', 
-            image: 'img/products/amor_eterno.png' 
-        },
-        { 
-            id: 5, 
-            name: 'Ramo Gigante', 
-            type: 'ramo', 
-            price: 90.00, 
-            desc: '50 rosas para una declaración impactante.', 
-            image: 'img/products/amor_eterno.png' 
-        }
-    ];
+        
 
         // --- CHART GENERATION ---
         document.addEventListener('DOMContentLoaded', () => {
