@@ -74,21 +74,28 @@
                         </label>
                         <div class="grid grid-cols-3 gap-4">
                             <label class="option-card cursor-pointer">
-                                <input type="radio" name="size" value="12" data-price="25" class="hidden" checked>
+                                <input type="radio" name="size" value="6" data-price="20" class="hidden" checked>
+                                <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
+                                    <span class="block font-bold text-lg">6</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
+                                </div>
+                            </label>
+                            <label class="option-card cursor-pointer">
+                                <input type="radio" name="size" value="12" data-price="35" class="hidden" checked>
                                 <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
                                     <span class="block font-bold text-lg">12</span>
                                     <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
                                 </div>
                             </label>
                             <label class="option-card cursor-pointer">
-                                <input type="radio" name="size" value="24" data-price="45" class="hidden">
+                                <input type="radio" name="size" value="24" data-price="55" class="hidden">
                                 <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
                                     <span class="block font-bold text-lg">24</span>
                                     <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
                                 </div>
                             </label>
                             <label class="option-card cursor-pointer">
-                                <input type="radio" name="size" value="50" data-price="90" class="hidden">
+                                <input type="radio" name="size" value="50" data-price="120" class="hidden">
                                 <div class="border-2 border-slate-100 p-4 rounded-2xl text-center transition-all hover:border-pink-200">
                                     <span class="block font-bold text-lg">50</span>
                                     <span class="text-[10px] text-slate-400 uppercase">Rosas</span>
@@ -118,14 +125,14 @@
                                     <input type="checkbox" name="extra" value="Luces LED" data-price="5" class="w-5 h-5 accent-brand-primary">
                                     <span class="font-medium">Luces LED</span>
                                 </div>
-                                <span class="text-brand-primary font-bold">+$5.00</span>
+                                <span class="text-brand-primary font-bold">+S/5.00</span>
                             </label>
                             <label class="flex items-center justify-between p-4 border border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-50 transition">
                                 <div class="flex items-center gap-3">
                                     <input type="checkbox" name="extra" value="Corona" data-price="3" class="w-5 h-5 accent-brand-primary">
                                     <span class="font-medium">Corona Brillante</span>
                                 </div>
-                                <span class="text-brand-primary font-bold">+$3.00</span>
+                                <span class="text-brand-primary font-bold">+S/3.00</span>
                             </label>
                         </div>
                     </div>
@@ -135,7 +142,7 @@
                         <div class="flex justify-between items-end mb-6">
                             <div>
                                 <p class="text-slate-400 text-sm uppercase font-bold tracking-widest">Total Estimado</p>
-                                <p id="final-price" class="text-5xl font-light text-slate-900">$0.00</p>
+                                <p id="final-price" class="text-5xl font-light text-slate-900">S/0.00</p>
                             </div>
                         </div>
                         <button type="button" onclick="enviarPedidoWA()" class="w-full bg-brand-primary hover:bg-brand-dark text-white py-6 rounded-2xl font-bold text-xl shadow-2xl shadow-pink-200 transition-all flex justify-center items-center gap-4">
@@ -230,7 +237,7 @@
                 const extras = form.querySelectorAll('input[name="extra"]:checked');
                 extras.forEach(ex => total += parseFloat(ex.dataset.price));
 
-                finalPriceEl.textContent = `$${total.toFixed(2)}`;
+                finalPriceEl.textContent = `S/${total.toFixed(2)}`;
             }
 
             form.addEventListener('change', calculate);

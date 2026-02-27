@@ -17,7 +17,7 @@ function updateCalculator() {
 
             // Update UI Summary
             outSize.textContent = `Ramo de ${selectedSize.value} Rosas`;
-            outSizePrice.textContent = `$${currentBasePrice.toFixed(2)}`;
+            outSizePrice.textContent = `S/${currentBasePrice.toFixed(2)}`;
             outColor.textContent = colorInput.value;
 
             // 2. Extras
@@ -33,13 +33,13 @@ function updateCalculator() {
                     // Add to visual list
                     const div = document.createElement('div');
                     div.className = "flex justify-between";
-                    div.innerHTML = `<span>+ ${input.parentElement.querySelector('span').textContent}</span> <span>$${price.toFixed(2)}</span>`;
+                    div.innerHTML = `<span>+ ${input.parentElement.querySelector('span').textContent}</span> <span>S/${price.toFixed(2)}</span>`;
                     outExtrasList.appendChild(div);
                 }
             });
 
             outExtrasList.classList.toggle('hidden', !hasExtras);
-            outTotal.textContent = `$${total.toFixed(2)}`;
+            outTotal.textContent = `S/${total.toFixed(2)}`;
         }
 
         // Add Listeners
